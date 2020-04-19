@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"reflect"
 	"testing"
 )
@@ -17,6 +18,13 @@ func TestSum(t *testing.T) {
 			t.Errorf("got %d want %d given, %v", got, want, numbers)
 		}
 	})
+}
+
+func ExampleSum() {
+	numbers := []int{1, 2, 3, 4, 5}
+	sum := Sum(numbers)
+	fmt.Println(sum)
+	// Output: 15
 }
 
 func TestSumAll(t *testing.T) {
