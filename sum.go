@@ -9,6 +9,7 @@ func Sum(numbers []int) int {
 	return sum
 }
 
+// Sum all number from various arrays
 func SumAll(numbersToSum ...[]int) []int {
 	var sums []int
 	for _, numbers := range numbersToSum {
@@ -18,6 +19,7 @@ func SumAll(numbersToSum ...[]int) []int {
 	return sums
 }
 
+// Sum all number from various arrays with tails
 func SumAllTails(numbersToSum ...[]int) []int {
 	var sums []int
 	for _, numbers := range numbersToSum {
