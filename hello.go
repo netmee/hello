@@ -2,10 +2,37 @@ package main
 
 import (
 	"fmt"
-
-	"github.com/netmee/newmath"
 )
 
+const spaninsh = "Spanish"
+const french = "French"
+const englishHelloPrefix = "Hello, "
+const spaninshHelloPrefix = "Hola, "
+const frenchHelloPrefix = "Bonjour, "
+
+// Hello return an hello string in a specific language.
+func Hello(name string, language string) string {
+	if name == "" {
+		name = "World"
+	}
+
+	prefix := greetingPrefix(language)
+
+	return prefix + name
+}
+
+func greetingPrefix(language string) (prefix string) {
+	switch language {
+	case french:
+		prefix = frenchHelloPrefix
+	case spaninsh:
+		prefix = spaninshHelloPrefix
+	default:
+		prefix = englishHelloPrefix
+	}
+	return
+}
+
 func main() {
-	fmt.Printf("Hello, world.  Sqrt(2) = %v\n", newmath.Sqrt(2))
+	fmt.Printf(Hello("Nico", "French"))
 }
